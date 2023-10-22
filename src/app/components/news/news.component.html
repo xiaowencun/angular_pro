@@ -1,0 +1,28 @@
+<div class="page">
+  <div nz-row>
+    <div nz-col nzSpan="8" (click)="goHome()">首页</div>
+    <div nz-col nzSpan="8" (click)="goList()">列表</div>
+    <div nz-col nzSpan="8" (click)="goDetail()">详情</div>
+  </div>
+  <br>
+  <input type="text" [(ngModel)]="inpStr">
+  <div>我是news组件</div>
+  <nz-tabset>
+    <nz-tab nzTitle="Tab 1">
+      Content of Tab Pane 1
+      
+    </nz-tab>
+    <nz-tab nzTitle="Tab 2">
+      <app-my-home [sonnews]="news" [sonFun]="faFUn" [allNews]="this" #sonEle (outer)="getSon($event)"></app-my-home>
+    </nz-tab>
+    <nz-tab nzTitle="Tab 3">
+      Content of Tab Pane 3
+    </nz-tab>
+  </nz-tabset>
+
+  <div>我要展示孩子home给我的数据 ----{{str1}}</div>
+  <br>
+  <button (click)="getData()">直接访问子组件</button>
+</div>
+
+

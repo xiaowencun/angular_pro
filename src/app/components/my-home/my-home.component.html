@@ -1,0 +1,74 @@
+<div>
+  <div>我是home组件</div>
+  <br>
+  <input type="text" [(ngModel)]="inpStr">
+  <div class="decrate" nz-row nzJustify="start">
+    <div class="table" nz-col nzSpan="16" >
+      <table border="1" border-collapse style="height: 100%;width: 100%;" >
+        <thead style="text-align: center;">
+          <tr >
+            <td >项目名称</td>
+            <td>呈批费用</td>
+            <td>承包价</td>
+            <td>结算价</td>
+            <td>说明xxxxxxxxxxxxxx</td>
+          </tr>
+        </thead>
+        <tbody style="text-align: center;">
+          <tr >
+            <td>空调系统</td>
+            <td>27</td>
+            <td>24</td>
+            <td>21</td>
+            <td>说明xxxxxxxxxxxxxxxxxxxxxxxx</td>
+          </tr>
+          <tr >
+            <td>安防工程</td>
+            <td>19</td>
+            <td>17</td>
+            <td>17</td>
+            <td>说明xxxxxxxxxxxxxxxxxttttttttt</td>
+          </tr>
+          <tr >
+            <td>通用办公设备</td>
+            <td>27</td>
+            <td>24</td>
+            <td>21</td>
+            <td>说明xxxxxxxxxxxxxxxxx</td>
+          </tr>
+          <tr >
+            <td>科技设备</td>
+            <td>27</td>
+            <td>24</td>
+            <td>21</td>
+            <td>说明xxxxxxxxxxxxxxxxx</td>
+          </tr>
+          <tr >
+            <td>自助设备</td>
+            <td>27</td>
+            <td>24</td>
+            <td>21</td>
+            <td>说明xxxxxxxxxxxxxxxxx</td>
+          </tr>
+          <tr >
+            <td>出纳机具设备</td>
+            <td>27</td>
+            <td>24</td>
+            <td>21</td>
+            <td>说明xxxxxxxxxxxxxxxxx</td>
+          </tr>
+          <tr >
+            <td>其他  </td>
+            <td>27</td>
+            <td>24</td>
+            <td>21</td>
+            <td>说明xxxxxxxxxxxxxxxxx</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div #myChart class="myChart" nz-col nzSpan="8"></div>
+  </div>
+  <br>
+  <button (click)="btnClick()">点击发送给父亲</button>
+</div>
