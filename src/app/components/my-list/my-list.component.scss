@@ -1,0 +1,11 @@
+.listPage {
+  // text-align: center;
+  padding-left: 100px;
+}
+
+::ng-deep{
+  nz-timeline-item:nth-child(1) .ant-timeline-item-head-blue {
+    /* 在这里添加您想要的样式 */
+    background-color: red;
+  }
+}

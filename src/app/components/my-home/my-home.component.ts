@@ -17,20 +17,27 @@ import { Output, EventEmitter } from '@angular/core'
 export class MyHomeComponent {
   public inpStr: String = "";
   public homeMsg: String = "我是home组件的消息msg1111"
+  homeDate: any 
 
   @ViewChild("myChart", {static: true}) myChart: any
   @Input() sonnews: any[]
   @Input() sonFun: any
   @Input() allNews: any
-
+  @Input() date: any
   @Output() private outer = new EventEmitter()
-
+  @Input() obj1: any
   constructor(private route: ActivatedRoute) {
     this.sonnews = []
+    this.obj1 = {}
+  }
+  onChange(e: any) {
+
   }
 
   ngOnInit() {
-    console.log("首页init11111")
+    this.homeDate = new Date(this.obj1.timeEnd)
+    console.log("首页init11111", this.homeDate)
+    
     // this.allNews.faFUn()
     // this.sonFun()
     console.log("获取父组件this", this.allNews);
@@ -48,6 +55,7 @@ export class MyHomeComponent {
     //   this.initChart()
     // }, 3000);
   }
+
 
   ngOnDestroy(): void {
     console.log("首页销毁1111");
@@ -75,26 +83,15 @@ export class MyHomeComponent {
       },
       xAxis: { 
         type: 'category' ,
-
-        // 全部显示X轴名字，显示不下旋转45度展示；
         axisLabel: {
           interval: 0,
           rotate: 45,
         }
       },
       yAxis: {},
-      // Declare several bar series, each will be mapped
-      // to a column of dataset.source by default.
       series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
     };
-    chart.setOption(option)
-    // chart.resize();
-    
-    window.addEventListener("resize", () => {
-      console.log("resize11111");
-      
-      chart.resize();
-    })  
+    chart.setOption(option) 
   }
 
   btnClick() {

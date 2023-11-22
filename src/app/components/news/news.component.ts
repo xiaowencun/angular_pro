@@ -17,13 +17,18 @@ export class NewsComponent {
 
   public arr:Array<String> = ["萨达","奥多","安稳"]
 
-  public date:any = new Date();
 
   public inpStr:String = ""
   
   public news: any[] = ["asd", "154","oljh"]
 
   public str1: String = ""
+
+  public obj1: Object = {
+    timeEnd: "2023-10-01"
+  }
+  date: Date = new Date("2022-10-23")
+  defaultPickerValue: Date = new Date('2023-11-01')
 
   @ViewChild("sonEle") sonEle: any
 
@@ -36,6 +41,18 @@ export class NewsComponent {
     console.log("新闻页init1111");
     // console.log("付访问子", this.sonEle.homeMsg);
     
+    
+  }
+
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    
+  }
+
+  ngAfterContentInit(): void {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Add 'implements AfterContentInit' to the class.
     
   }
   ngOnDestroy(): void {
@@ -67,6 +84,10 @@ export class NewsComponent {
     this.router.navigate(["detail", "3.1415926"])
   }
 
+    goCanvas() {
+    this.router.navigate(["canvas"])
+  }
+
   faFUn() {
     console.log("我是父亲news的方法");
     
@@ -81,5 +102,9 @@ export class NewsComponent {
   getData() {
     console.log("直接访问子组件", this.sonEle.homeMsg);
     
+  }
+
+  onChange(e: any) {
+
   }
 }
